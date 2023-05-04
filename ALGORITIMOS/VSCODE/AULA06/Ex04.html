@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o peso: <input id="input_peso"><br>
+    <button onclick="Calcular()">Analisar</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<SCRipt>
+    function Calcular() {
+        var peso = Number(input_peso.value)
+
+        if (peso <= 13.5) {
+            div_mensagem.innerHTML = `Abaixo do Peso`
+        } else if (peso > 21.2) {
+            div_mensagem.innerHTML = `Acima do Peso`
+        } else if (peso == 18.3) {
+            div_mensagem.innerHTML = `Peso Perfeito`
+        }  else {
+            div_mensagem.innerHTML = `Peso na Média`
+        }
+}
+</SCRipt>

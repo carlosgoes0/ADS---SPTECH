@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a quantidade de Macarons: <input id="input_qtdMacarons">
+    Valor do Macarons: <input id="input_valorMacarons"> <br><br>
+    Insira a quantidade de Brigadeiros: <input id="input_qtdBrigadeiros">
+    Valor do Brigadeiros: <input id="input_valorBrigadeiros"><br><br>
+    Insira a quantidade de Cupcakes: <input id="input_qtdCupcakes">
+    Valor do Cupcakes: <input id="input_valorCupcakes"><br><br>
+    Insira a quantidade de Cheesecakes: <input id="input_qtdCheesecakes">
+    Valor do Cheesecakes: <input id="input_valorCheesecakes"><br><br>
+    <button onclick="calcular()">Verificar Vendas</button><br>
+    <div id="div_mensagem"></div><br><br>
+    <div id="div_Resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function calcular() {
+         
+        var Macarons = Number(input_qtdMacarons.value) 
+        var valorMacarons = Number(input_valorMacarons.value)
+        var Brigadeiros = Number(input_qtdBrigadeiros.value)
+        var valorBrigadeiros = Number(input_valorBrigadeiros.value)
+        var Cupcakes = Number(input_qtdCupcakes.value)
+        var valorCupcakes = Number(input_valorCupcakes.value)
+        var Cheesecakes = Number(input_qtdCheesecakes.value)
+        var valorCheesecakes = Number(input_valorCheesecakes.value)
+        
+        var totalVendas = (valorBrigadeiros + valorCupcakes + valorCheesecakes + valorMacarons)
+        var Nvendas = 1
+
+    
+
+        if (Macarons != 0 && valorMacarons != 0 && Brigadeiros != 0 && valorBrigadeiros != 0 && Cupcakes != 0 && valorCupcakes != 0 && Cheesecakes != 0 && valorCheesecakes != 0) {            
+               
+        div_mensagem.innerHTML = `"NÚMERO DA VENDA   -   IMAGEM DO DOCE   -   R$ VALOR UNITÁRIO"<br><br>`
+
+
+
+                    for (var VendasM = 1; VendasM <= Macarons; VendasM++) {
+                               
+                                
+                                div_mensagem.innerHTML += `VENDA  - ${Nvendas++} - 
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTetnJrGw0F8ZA01s1HXjLTSUxVmMUrx-QJ3AELfigzq_sC5F6VpcdZWBC6ow4dq2xFUG0&usqp=CAU" width="100px" height="100px">
+                                    -    R$${valorMacarons} <br>`                
+                            } 
+                
+                            
+                    for(var VendasB = 1; VendasB <= Brigadeiros; VendasB++) {
+                                            
+                                div_mensagem.innerHTML += `VENDA  - ${Nvendas++} - 
+                                <img src="https://www.confeiteiradesucesso.com/wp-content/uploads/2018/06/brigadeirogourmetreceita1.jpg" width="100px" height="100px">
+                                 - R$ ${valorBrigadeiros}<br>`
+                                        }
+
+
+                    for(var VendasC = 1; VendasC <= Cupcakes; VendasC++) {
+
+                                div_mensagem.innerHTML += `VENDA  - ${Nvendas++} - 
+                                <img src="https://hips.hearstapps.com/hmg-prod/images/cookies-n-creme-cupcakes-1618264473.jpg?crop=0.803xw:0.602xh;0.197xw,0.398xh&resize=1200:*" width="100px" height="100px">
+                                 - R$ ${valorCupcakes}<br>`
+                                        }
+
+                                        
+                    for(var VendasCh = 1; VendasCh <= Cheesecakes; VendasCh++) {
+          
+                                div_mensagem.innerHTML += `VENDA  - ${Nvendas++} - 
+                                <img src="https://www.receitasedicasdochef.com.br/wp-content/uploads/2014/10/Receitas-de-Cheesecake.jpg" width="100px" height="100px">
+                                 - R$ ${valorCheesecakes}<br>`
+
+                                        }
+
+                    
+                    div_Resultado.innerHTML = `Com a quantidade de ${Macarons} Macarons, ${Brigadeiros} Brigadeiros, ${Cupcakes} Cupcakes e ${Cheesecakes} Cheesecakes, a venda totalizará R$${totalVendas}`
+                    
+} else {
+    alert ('Insira um valor válido' )
+}
+    }
+</script>
+

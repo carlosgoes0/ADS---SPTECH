@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Esta chovendo ? <input id="input_chuva"><br>
+    Tenho Dinheiro ? <input id="input_dinheiro"><br>
+    Tenho tempo ? <input id="input_tempo"><br>
+    Gosto de Nuggets ? <input id="input_nuggets"><br>
+    <button onclick="Analisar()">Analisar</button><br>
+    <div id="div_mensagem"></div><br>
+</body>
+</html>
+
+<script>
+    function Analisar() {
+        var chuva = (input_chuva.value)
+        var Dinheiro = (input_dinheiro.value)
+        var tempo = (input_tempo.value)
+        var nuggets = (input_nuggets.value)
+
+      if (chuva == "nao" || dinheiro == "nao" || tempo == "nao" || nuggets == "nao") {
+        div_mensagem.innerHTML = `Nao vou ao Mc'Donalds`
+      } else if (chuva == "nao" || dinheiro == "nao" || tempo == "nao" || nuggets == "sim") {
+        div_mensagem.innerHTML = `Nao vou ao Mc'Donalds`
+      } else if (chuva == "nao" || dinheiro == "nao" || tempo == "sim" || nuggets == "nao"){
+        div_mensagem.innerHTML = `Vou ao Mc'Donalds`
+      }
+       
+    
+    }
+</script>

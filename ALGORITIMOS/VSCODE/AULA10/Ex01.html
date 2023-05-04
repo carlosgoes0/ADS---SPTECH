@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira login: <input id="input_login"><br>
+    Insita senha: <input id="input_senha"><br>
+    <button onclick="bton()">Login</button>
+    <div id="div_frase"></div>
+</body>
+</html>
+
+<script>
+
+    function bton(){
+        var login = (input_login.value)
+        var senha = (input_senha.value)
+
+        var autenticacao_login ="aidmin"
+        var autenticacao_senha = "seinha"
+
+        var autenticacao_L = login == autenticacao_login
+        var autenticacao_S = senha == autenticacao_senha
+        var autenticacaoF = autenticacao_L && autenticacao_S
+
+        if(autenticacaoF){
+            div_frase.innerHTML = `<span style="color:blue;">Usuário autenticado com sucesso`
+        } if(autenticacao_L != true){
+            div_frase.innerHTML += `<span style="color:red;">Login Incorreto!<br>`
+        } if (autenticacao_S != true){
+            div_frase.innerHTML += `<br><span style="color:red;">Senha incorreta!`
+                alert("Entre em contato com o suporte para recuperar sua senha")
+        }
+
+    }
+</script>

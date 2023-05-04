@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o login: <input id="input_login"><br>
+    Insira o senha: <input type="password" id="input_password"><br>
+    Insira o CodSeg: <input type="password" id="input_codseg"><br>
+    <button onclick="Calcular()">Entrar</button>
+</body> 
+</html>
+<script>
+    function Calcular(){
+        var login = (input_login.value)
+        var password = (input_password.value)
+        var codseg = (input_codseg.value)
+
+        if (login == "Sptech" && password == "digital" && codseg == "123"){
+            alert("Usuário autenticado com sucesso!")
+        } else {
+            alert("Falha na autenticação")
+        }
+    }
+</script>

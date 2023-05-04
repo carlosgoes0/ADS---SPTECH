@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o saldo conta <input id="input_saldo"><br><br>
+    Insira o valor debito <input id="input_deb"><br><br>
+    <button onclick="Calcular()">Analisar Conta</button>
+    <div id="div_frases"></div>
+</body>
+</html>
+<script>
+    function Calcular() {
+        var saldo = (input_saldo.value) 
+        var deb = (input_deb.value)
+        var calc = (saldo - deb)
+
+        if (calc < 0) 
+            div_frases.innerHTML = `Saldo Negativo`
+
+        if (calc > 0) 
+            div_frases.innerHTML = `O saldo atual da conta corrente é ${calc}`
+
+        if (calc == 0)
+            div_frases.innerHTML = `O saldo atual da conta corrente é ${calc}`
+            }
+</script>

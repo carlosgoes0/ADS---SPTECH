@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="Cabalisticos()">Numeros Cabalisticos</button>
+    <div id="div_numeros"></div>
+</body>
+</html>
+<script>
+    function Cabalisticos(){
+        var numero = 0;
+        var cont = 1;
+
+        div_numeros.innerHTML += "";
+
+        while(numero < 30) {
+            numero++;
+            if (numero == 3 || numero == 4 || numero == 7 || numero == 10 || numero == 12){
+                div_numeros.innerHTML += "";
+            } 
+            else {
+                div_numeros.innerHTML += numero + "<br>";
+            }
+            
+        }
+            
+        
+    }
+</script>

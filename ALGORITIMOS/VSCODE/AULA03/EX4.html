@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Olá, Preencha os dados!</h1><br><br>
+    Insira o sabor da Pizza <input id="input_sab"><br><br>
+    Insita o valor da Pizza <input id="input_vlr"><br><br>
+    Insira a qtd de amigos <input id="input_ami"><br><br>
+    <button onclick="Calcular()">Ver valor por amigo</button><br><br>
+    <div id = "div_frases"></div>
+</body>
+</html>
+
+<script>
+    function Calcular() {
+        var vlr = (input_vlr.value);
+        var sab = (input_sab.value);
+        var ami = (input_ami.value);
+        var calc = vlr/ami;
+        var tot = Number(calc + (calc*10)/100)
+
+    div_frases.innerHTML = `Cada amigo vai colaborar com R$ ${tot} para a pizza de ${vlr}.`
+    }
+</script>

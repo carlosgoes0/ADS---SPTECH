@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div id="div_mensagem">Você já clicou 0 vezes</div>
+    <button onclick="Click()">Aumentar em 1</button>
+</body>
+</html>
+<script>
+    var click = Number(0);
+
+    function Click(){
+     click = 1;
+        div_mensagem.innerHTML = `Você já clicou ${aumentar} vezes`;
+
+    }
+</script>

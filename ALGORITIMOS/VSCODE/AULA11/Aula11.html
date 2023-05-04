@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="contar20()">Contar até 20</button>
+    <button onclick="contar50()">Contar até 50</button>
+    <button onclick="contar100()">Contar até 10.000</button>
+    <div id="div_numeros"></div>
+</body>
+</html>
+<script>
+    function contar20(){
+        var numero = 1;
+        while(numero <= 20) {
+            div_numeros.innerHTML += numero + "<br>";
+            numero += 1;
+        }
+    }
+
+    function contar50(){
+        var numero = 1;
+        while(numero <= 50) {
+            div_numeros.innerHTML += numero + "<br>";
+            numero += 1;
+        }
+    }
+
+    function contar100(){
+        var numero = 1;
+        while(numero <= 100) {
+            div_numeros.innerHTML += numero + "<br>";
+            numero += 1;
+        }
+    }
+</script>

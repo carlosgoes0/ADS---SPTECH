@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a quantidade de takes: <input id="input_qtd_takes"><br>
+    Insira a quantidade de Padroes: <input id="input_qtd_padrao">
+    <button onclick="simular()">Simular</button><br><br>
+    <div id="div_mensagem"></div><br><br>
+</body>
+</html>
+<script>
+
+
+function simular() {
+        
+       var qtd_takes = Number (input_qtd_takes.value);
+       var qtd_padrao =Number (input_qtd_padrao.value);
+       var cor = "";
+       div_mensagem.innerHTML = "";
+       
+       var  Nah = `Nah,`;
+       var  nah = `nah,`;
+       var heyjude = `hey Jude,`;
+
+
+       for (var repeticoes = 1;
+            repeticoes <= qtd_takes;
+            repeticoes++ ) {
+
+       if (repeticoes % 2 == 0) {
+            cor = "blue";
+       } else {
+            cor = "red";
+       }
+               
+       div_mensagem.innerHTML += `Take ${repeticoes} <br><br>`
+       
+            div_mensagem.innerHTML +=
+            `Hey, Jude, don't make it bad<br>
+            Take a sad song and make it better<br>
+            Remember to let her into your heart<br>
+            Then you can start to make it better<br>
+            Hey, Jude, don't be afraid<br>
+            You were made to go out and get her<br>
+            The minute you let her under your skin<br>
+            Then you begin to make it better<br>
+            And anytime you feel the pain, Hey, Jude, refrain<br>
+            Don't carry the world upon your shoulders<br>
+            For well you know that it's a fool<br>
+            Who plays it cool<br>
+            By making his world a little colder <br><br>`
+        
+
+            for (var contNah = 1;
+                   contNah <= 9;
+                   contNah++) {
+                   
+                    if (contNah == 1) {
+                        Nah += `Nah,`;
+                    } else if (contNah > 1 && contNah < 9) {
+                        nah += `nah,`;
+                    }
+               
+               div_mensagem.innerHTML += `<span style="color: ${cor}"></span>`
+            }
+            
+    
+       }   
+
+        
+
+        
+
+
+
+
+
+div_mensagem.innerHTML +=
+`Hey, Jude, don't make it bad<br>
+Take a sad song and make it better<br>
+Remember to let her into your heart<br>
+Then you can start to make it better<br>
+Hey, Jude, don't be afraid<br>
+You were made to go out and get her<br>
+The minute you let her under your skin<br>
+Then you begin to make it better<br>
+And anytime you feel the pain, Hey, Jude, refrain<br>
+Don't carry the world upon your shoulders<br>
+For well you know that it's a fool<br>
+Who plays it cool<br>
+By making his world a little colder <br><br>`
+                
+            
+`Hey, Jude, don't let me down<br>
+You have found her, now go and get her<br>
+Remember to let her into your heart<br>
+Then you can start to make it better<br>
+So let it out and let it in, Hey, Jude, begin<br>
+You're waiting for someone to perform with<br>
+And don't you know that it's just you, Hey, Jude, you'll do<br>
+The movement you need is on your shoulder<br><br>`
+            
+
+`Hey, Jude, don't make it bad<br>
+Take a sad song and make it better<br>
+Remember to let her under your skin<br>
+Then you'll begin to make it better, better, better, better, better... oh!<br><br>`
+
+
+
+    
+
+}
+</script>
+
+
+

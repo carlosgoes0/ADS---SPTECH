@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o nome da empresa: <input id="input_empresa"><br>
+    Insira o valor da bolsa empresa: <input id="input_bolsa"><br>
+    Insira o valor do vr da empresa: <input id="input_vr"><br>
+    Tempo de deslocamento até SPTECH: <input id="input_tempo"><br>
+    <button onclick="Analisar()">É preferida</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function Analisar(){
+        var nome = (input_empresa.value)
+        var bolsa = Number(input_bolsa.value)
+        var vr = Number(input_vr.value)
+        var tempo = Number(input_tempo.value)
+
+        if (bolsa >= 1800 || vr >= 20 || tempo <= 30){
+            div_mensagem.innerHTML = `A empresa ${nome} é uma de suas preferências`
+        } else {
+            div_mensagem.innerHTML = `A empresa ${nome} está fora da sua lista`
+        }
+    }
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Olá, Preencha os dados!</h1><br><br>
+    Inserir qtd de chocolates: <input id="input_qtd"><br>   
+    <button onclick="Calcular()">Compra</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function Calcular() {
+        var qtd = Number(input_qtd.value)
+        var valor = Number(qtd * 2.50)
+
+        if (qtd >= 12) {
+        div_mensagem.innerHTML = `O valor da sua compra foi de R$ ${valor}`}
+        else {
+            div_mensagem.innerHTML = `O valor da sua compra foi de R$ ${qtd * 3.00}`
+        }
+    }
+</script>

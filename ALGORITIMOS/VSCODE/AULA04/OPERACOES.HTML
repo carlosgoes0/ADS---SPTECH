@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Idade: <input id="input_idade"><br><br>
+    <button onclick="Eleicao()">Eleição</button><br><br>
+    <div id="div_frases"></div><br>
+</body>
+</html>
+
+<SCRipt>
+    function Eleicao() {
+    var idade = Number(input_idade.value)
+
+    if (idade <16) {
+        div_frases.innerHTML = "Voce ainda nao pode votar"
+    } 
+    if (idade ==16) {
+         div_frases.innerHTML = "Voce pode votar, porem tem exatamente 16 anos" 
+    }
+    if (idade >16) {
+         div_frases.innerHTML = "Voce pode votar" 
+    }}
+</SCRipt>

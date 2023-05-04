@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Olá, Preencha os dados!</h1><br><br>
+    Inserir nome: <input id="input_nome"><br>   
+    Inserir idade: <input id="input_idade"><br>
+    <button onclick="Calcular()">Avaliar aluno</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function Calcular() {
+        var nome = (input_nome.value)
+        var idade = (input_idade.value)
+
+        if (idade >= 18) {
+        div_mensagem.innerHTML = `<b color='blue'>${nome} vamos tirar a CNH?</b>`}
+        else {
+            div_mensagem.innerHTML = `${nome} vai jogar PlayStation!`
+        }
+        }
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira quantas voltar o carro vai dar: <input id="input_num"><br>
+    <button onclick="calcular()">Iniciar Corrida</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+        var numero = Number(input_num.value);
+        var cont = 1;
+        var mensagem = "";
+
+        while(cont <= numero) {
+            mensagem += `Carro dando a ${cont} volta <br>`;
+            cont += 1;
+            div_mensagem.innerHTML = mensagem;
+        }
+       div_mensagem.innerHTML += `Corrida Finalizada`;
+
+    }
+</script>

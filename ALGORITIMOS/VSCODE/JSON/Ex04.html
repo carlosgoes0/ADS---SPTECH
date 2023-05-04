@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o nome do time 1: <input id="input_Time1">
+    Insira a quantidade de Vitorias1: <input id="input_Vitorias">
+    Insira a quantidade de Empates1: <input id="input_Empates">
+    Insira a quantidade de Derrotas1: <input id="input_Derrotas">
+    <br>
+    Insira o nome do time 2: <input id="input_Time2">
+    Insira a quantidade de Vitorias2: <input id="input_Vitorias">
+    Insira a quantidade de Empates2: <input id="input_Empates">
+    Insira a quantidade de Derrotas2: <input id="input_Derrotas">
+    <br>
+    Insira o nome do time 3: <input id="input_Time3">
+    Insira a quantidade de Vitorias3: <input id="input_Vitorias">
+    Insira a quantidade de Empates3: <input id="input_Empates">
+    Insira a quantidade de Derrotas3: <input id="input_Derrotas">
+     <button onclick="AnalisarCampanha()">Comparar Campanhas</button>
+     <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+   
+
+    function AnalisarCampanha() {
+        
+        var Time = {
+            Vitorias: 3,
+            Empates: 1,
+            Derrotas: 0,    
+        }
+
+        var Time1 = (input_Time1.value)
+        var Time2 = (input_Time2.value)
+        var Time3 = (input_Time3.value)
+        var Vitorias = Number(input_Vitorias.value)
+        var Empates = Number(input_Empates.value)
+        var Derrotas = Number(input_Derrotas.value) 
+
+
+
+
+
+   if (Time1 > Time2 && Time1 > Time3) {
+
+        div_resultado.innerHTML += `O time ${Time1}  terminou o campeonato com ${Time.Vitorias*Vitorias + Time.Empates*Empates + Time.Derrotas*Derrotas} pontos<br>`
+        div_resultado.innerHTML += `O time ${Time2}  terminou o campeonato com ${Time.Vitorias*Vitorias + Time.Empates*Empates + Time.Derrotas*Derrotas} pontos<br>`
+        div_resultado.innerHTML += `O time ${Time3}  terminou o campeonato com ${Time.Vitorias*Vitorias + Time.Empates*Empates + Time.Derrotas*Derrotas} pontos`
+
+   }
+        else {
+
+            alert (`Os times nao tem a mesma quantidade de jogos`)
+
+        }
+    }
+</script>           

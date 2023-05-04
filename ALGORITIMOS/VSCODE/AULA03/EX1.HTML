@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Olá, Preencha os dados!</h1><br><br>
+    Horas de sono ? <input id="input_hrs"><br><br>
+    <button onclick="Calcular()">Calcular Sono</button>
+    <div id="div_frases"></div>
+</body>
+</html>
+
+<script>
+function Calcular() {
+    var hrs = Number(input_hrs.value);
+    var f1 = Number((hrs * 0.5)/100);
+    var f2 = Number((hrs * 45)/100);
+    var f3 = Number((hrs * 30)/100);
+    var f4 = Number((hrs * 20)/100);
+
+    div_frases.innerHTML = `Ao dormir ${hrs} horas, você dormiu: <br>
+    ${f1} horas na fase 1<br>
+    ${f2} horas na fase 2<br>
+    ${f3} horas na fase 3<br>
+    ${f4} horas na fase REM<br>`
+
+}   
+</script>

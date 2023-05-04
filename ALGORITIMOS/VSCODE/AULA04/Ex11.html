@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a qtd de filhos: <input id="input_filhos"><br>
+    <button onclick="Calcular()">Verificar Familia</button>
+    <div id="div_frases"></div>
+</body>
+</html>
+<script>
+    function Calcular() {
+        var filhos = (input_filhos.value)
+
+        if (filhos >= 1) 
+            div_frases.innerHTML = `
+            Não tem TV `
+        
+        if (filhos >= 2) 
+            div_frases.innerHTML = `
+            Não tem TV <br>
+            Não tem internet<br> `
+        
+        if (filhos >= 3) 
+            div_frases.innerHTML = `
+            Não tem TV <br>
+            Não tem internet<br>
+            Não tem video game<br> `
+        
+        if (filhos >= 4) 
+            div_frases.innerHTML = `  
+            Não tem TV <br>
+            Não tem internet<br>
+            Não tem video game<br>
+            Não tem Netflix `
+        }
+</script>

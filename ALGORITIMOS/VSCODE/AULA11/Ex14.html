@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    idade: <input id="input_idade"><br>
+    <button onclick="Calcular()">Verificar Idade</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function Calcular(){
+        var idade = Number(input_idade.value);
+        var cont = 0;
+        div_mensagem.innerHTML = "";
+
+        while(cont <= idade){
+            if(cont < 4){
+                div_mensagem.innerHTML += `${cont} anos (Primeira Infância)<br>`;
+            } else if(cont < 6){
+                div_mensagem.innerHTML += `${cont} anos (Pré Escolar)<br>`;
+            } else if (cont < 10){
+                div_mensagem.innerHTML += `${cont} anos (Segunda infancia)<br>`;
+            } else if (cont < 18){
+                div_mensagem.innerHTML += `${cont} anos (Adolescencia)<br>`;
+            } else if (cont < 50){
+                div_mensagem.innerHTML += `${cont} anos (Adulto)<br>`;
+            } else if (cont < 100){
+                div_mensagem.innerHTML += `${cont} anos (Melhor Idade)<br>`;
+            } else {
+                div_mensagem.innerHTML += `${cont} anos (Matusalem)<br>`;
+            }
+            cont ++;
+            }
+        }
+    
+</script>

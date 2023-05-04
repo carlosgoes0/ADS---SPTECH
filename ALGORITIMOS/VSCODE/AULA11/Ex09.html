@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira um numero: <input id="input_num"><br>
+    Insira uma frase: <input id="input_frase"><br>
+    <button onclick="calcular()">Papagaio</button>
+    <div id="div_text"></div>
+</body>
+</html>
+
+<script>
+    
+        function calcular() {
+            var numero = Number(input_num.value);
+            var frase = input_frase.value;
+            var cont = 1;
+    
+            while(cont <= numero) {
+               cont++;
+
+               var mensagem = "";
+               var cont2 = 0;
+                
+                while (cont2 < numero) {
+                    mensagem += `${frase} \n`;
+                    cont2 ++;
+                }
+
+                alert(mensagem);
+            }
+        }
+    
+</script>

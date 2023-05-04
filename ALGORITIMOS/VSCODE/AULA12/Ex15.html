@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a quantidade de passageiros: <input id="input_qtdPassageiros">
+    <button onclick="calcular()">#Partiu Carona</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+
+        var qtdPassageiros = Number(input_qtdPassageiros.value);
+
+        for( var contador = 2;
+             contador <= qtdPassageiros; 
+             contador ++) {
+
+               if(contador){
+
+                div_mensagem.innerHTML = `Entrou o 1º passageiro (que é o(a) motorista) <br>`;
+
+                if (contador <= 5) {
+
+                    div_mensagem.innerHTML += `Entrou o ${contador} passageiro <br>`;
+                } else if (contador > 5) {
+                    div_mensagem.innerHTML += `O ${contador}passageiro terá que esperar!  <br>`;
+                }
+            }
+            
+        }
+    }
+</script>

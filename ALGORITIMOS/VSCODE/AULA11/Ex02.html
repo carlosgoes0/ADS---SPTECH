@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="diga()">Diga algo sobre a matéria de Algoritmos</button>
+    <div id="div_text"></div>
+</body>
+</html>
+<script>
+    function diga(){
+        var num = 1;
+        var text = `Algoritmos é top`;
+
+        while(num <= 7) {
+
+            div_text.innerHTML += text + "<br>";
+            num += 1;
+        }
+    }
+</script>

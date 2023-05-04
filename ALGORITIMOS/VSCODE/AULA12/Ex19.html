@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a quantidade de xicaras de cafe com leite: <input id="input_qtdXicaras">
+    <button onclick="calcular()">Ver Quantidade</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    function calcular() {
+
+        var qtdXicaras = Number(input_qtdXicaras.value);
+
+        for ( leite = 1;
+              leite <= qtdXicaras;
+              leite += 1) {
+                div_mensagem.innerHTML += `    <img src="https://bolosparavender.com.br/wp-content/uploads/2020/08/fazer-bolo-com-leite-em-po-da-certo-como-fazer.jpg" alt="" height="10%" width="10%"><br>`
+                
+          
+                for (cafe = 1;
+                     cafe < 2;
+                     cafe++ ){
+                div_mensagem.innerHTML += `    <img src="https://img.freepik.com/fotos-premium/cafe-em-po-na-colher-de-madeira-em-branco_253984-1697.jpg" alt="" height="10%" width="10%">`;     
+                div_mensagem.innerHTML += `    <img src="https://img.freepik.com/fotos-premium/cafe-em-po-na-colher-de-madeira-em-branco_253984-1697.jpg" alt="" height="10%" width="10%"><br>`;     
+
+           }
+    }
+
+}
+</script>

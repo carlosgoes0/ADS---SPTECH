@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Inserir temperatura: <input id="input_temp"><br>
+    <button onclick="Calcular()">Exibir temperatura</button>
+    <div id="div_mensagem"></div>       
+</body>
+</html>
+<script>
+    function Calcular(){
+        var temp = Number(input_temp.value)
+        
+        if (temp <= 10) {
+            div_mensagem.innerHTML = `Temperatura esta muito baixa`
+        } else if (temp > 20) {
+                div_mensagem.innerHTML = `Temperatura esta muito alta`
+            } else {
+                div_mensagem.innerHTML = `Temperatura esta ideal`
+            }
+        }
+
+    </script>

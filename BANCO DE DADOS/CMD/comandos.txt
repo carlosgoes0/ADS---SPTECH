@@ -1,0 +1,255 @@
+Microsoft Windows [versão 10.0.19045.2604]
+(c) Microsoft Corporation. Todos os direitos reservados.
+
+C:\Users\ADS - CARLOS>cd C:\Program Files\MySQL\MySQL Server 8.0\bin
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -u root -p
+Enter password: ********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 49
+Server version: 8.0.32 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| aula4              |
+| continuada1        |
+| dados              |
+| information_schema |
+| mysql              |
+| performance_schema |
+| provabd            |
+| sprint1            |
+| sprint2            |
+| sptech             |
+| sptechc            |
+| sys                |
+| testeprova         |
++--------------------+
+13 rows in set (0.10 sec)
+
+mysql> use sptechc;
+Database changed
+mysql> show tables;
+Empty set (0.02 sec)
+
+mysql> CREATE TABLE historico (
+    -> id INT PRIMARY KEY AUTO_INCREMENT,
+    -> nome VARCHAR(200) NOT NULL,
+    -> dataHora DATETIME DEFAULT current_timestamp,
+    -> url VARCHAR(250) NOT NULL,
+    -> navegador VARCHAR(100)
+    -> );
+Query OK, 0 rows affected (0.23 sec)
+
+mysql> INSERT INTO historico (nome, url, navegador) VALUES
+    -> ('São Paulo Tech School', 'https://moodle.sptech.school/', 'Microsoft Edge'),
+    -> ('Página Inicial - Microsoft Azure', 'https://portal.azure.com/#home', 'Microsoft Edge'),
+    -> ('Ofertas e Promoções | Amazon.com.br', 'https://www.amazon.com.br/deals?ref_=nav_cs_gb', 'Firefox Developer Edition'),
+    -> ('404 Not Found', 'http://moodletech.azurewebsites.net/', 'Firefox Developer Edition'),
+    -> ('Working...', 'https://login.microsoftonline.com/kmsi', 'Firefox Developer Edition'),
+    -> ('Email - Usuario Aluno - Outlook', 'https://outlook.office.com/mail/', 'Firefox Developer Edition'),
+    -> ('Solicitações - Suporte - Digital Building', 'https://bandtec.sdpondemand.manageengine.com/app/itdesk/ui/requests', 'Firefox Developer Edition'),
+    -> ('Carrinho de compras da Amazon.com', 'https://www.amazon.com.br/gp/cart/view.html?ref_=nav_cart', 'Firefox Developer Edition'),
+    -> ('MySQL | Begin Your Download', 'https://dev.mysql.com/downloads/file/?id=516926', 'Firefox Developer Edition'),
+    -> ('MySQL | Download MySQL Installer', 'https://dev.mysql.com/downloads/installer/', 'Firefox Developer Edition');
+Query OK, 10 rows affected (0.03 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql>
+mysql> create table usuario (^C
+mysql> ^C
+mysql> select * from historico;
++----+-------------------------------------------+---------------------+---------------------------------------------------------------------+---------------------------+
+| id | nome                                      | dataHora            | url                                                                 | navegador                 |
++----+-------------------------------------------+---------------------+---------------------------------------------------------------------+---------------------------+
+|  1 | São Paulo Tech School                     | 2023-03-10 14:04:17 | https://moodle.sptech.school/                                       | Microsoft Edge            |
+|  2 | Página Inicial - Microsoft Azure          | 2023-03-10 14:04:17 | https://portal.azure.com/#home                                      | Microsoft Edge            |
+|  3 | Ofertas e Promoções | Amazon.com.br       | 2023-03-10 14:04:17 | https://www.amazon.com.br/deals?ref_=nav_cs_gb                      | Firefox Developer Edition |
+|  4 | 404 Not Found                             | 2023-03-10 14:04:17 | http://moodletech.azurewebsites.net/                                | Firefox Developer Edition |
+|  5 | Working...                                | 2023-03-10 14:04:17 | https://login.microsoftonline.com/kmsi                              | Firefox Developer Edition |
+|  6 | Email - Usuario Aluno - Outlook           | 2023-03-10 14:04:17 | https://outlook.office.com/mail/                                    | Firefox Developer Edition |
+|  7 | Solicitações - Suporte - Digital Building | 2023-03-10 14:04:17 | https://bandtec.sdpondemand.manageengine.com/app/itdesk/ui/requests | Firefox Developer Edition |
+|  8 | Carrinho de compras da Amazon.com         | 2023-03-10 14:04:17 | https://www.amazon.com.br/gp/cart/view.html?ref_=nav_cart           | Firefox Developer Edition |
+|  9 | MySQL | Begin Your Download               | 2023-03-10 14:04:17 | https://dev.mysql.com/downloads/file/?id=516926                     | Firefox Developer Edition |
+| 10 | MySQL | Download MySQL Installer          | 2023-03-10 14:04:17 | https://dev.mysql.com/downloads/installer/                          | Firefox Developer Edition |
++----+-------------------------------------------+---------------------+---------------------------------------------------------------------+---------------------------+
+10 rows in set (0.00 sec)
+
+mysql> create table usuario (
+    -> id int primary key auto_increment,
+    -> nome varchar(50),
+    -> cpf char(14) unique) auto_increment = 100;
+Query OK, 0 rows affected (0.05 sec)
+
+
+mysql> insert into usuario values
+    -> (null, 'Isabel', '123.456.789-10'),
+    -> (null, 'Felipe', '987.654.321-00');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from usuario;
++-----+--------+----------------+
+| id  | nome   | cpf            |
++-----+--------+----------------+
+| 100 | Isabel | 123.456.789-10 |
+| 101 | Felipe | 987.654.321-00 |
++-----+--------+----------------+
+2 rows in set (0.01 sec)
+
+mysql> alter table historico add column fkuser int;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc historico;
++-----------+--------------+------+-----+-------------------+-------------------+
+| Field     | Type         | Null | Key | Default           | Extra             |
++-----------+--------------+------+-----+-------------------+-------------------+
+| id        | int          | NO   | PRI | NULL              | auto_increment    |
+| nome      | varchar(200) | NO   |     | NULL              |                   |
+| dataHora  | datetime     | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
+| url       | varchar(250) | NO   |     | NULL              |                   |
+| navegador | varchar(100) | YES  |     | NULL              |                   |
+| fkuser    | int          | YES  |     | NULL              |                   |
++-----------+--------------+------+-----+-------------------+-------------------+
+6 rows in set (0.02 sec)
+
+mysql> alter table historico add foreign key (fkuser) references usuario(id);
+Query OK, 10 rows affected (0.11 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> desc historico;
++-----------+--------------+------+-----+-------------------+-------------------+
+| Field     | Type         | Null | Key | Default           | Extra             |
++-----------+--------------+------+-----+-------------------+-------------------+
+| id        | int          | NO   | PRI | NULL              | auto_increment    |
+| nome      | varchar(200) | NO   |     | NULL              |                   |
+| dataHora  | datetime     | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
+| url       | varchar(250) | NO   |     | NULL              |                   |
+| navegador | varchar(100) | YES  |     | NULL              |                   |
+| fkuser    | int          | YES  | MUL | NULL              |                   |
++-----------+--------------+------+-----+-------------------+-------------------+
+6 rows in set (0.00 sec)
+
+mysql> select*from historico;
++----+-------------------------------------------+---------------------+---------------------------------------------------------------------+---------------------------+--------+
+| id | nome                                      | dataHora            | url                                                                 | navegador                 | fkuser |
++----+-------------------------------------------+---------------------+---------------------------------------------------------------------+---------------------------+--------+
+|  1 | São Paulo Tech School                     | 2023-03-10 14:04:17 | https://moodle.sptech.school/                                       | Microsoft Edge            |   NULL |
+|  2 | Página Inicial - Microsoft Azure          | 2023-03-10 14:04:17 | https://portal.azure.com/#home                                      | Microsoft Edge            |   NULL |
+|  3 | Ofertas e Promoções | Amazon.com.br       | 2023-03-10 14:04:17 | https://www.amazon.com.br/deals?ref_=nav_cs_gb                      | Firefox Developer Edition |   NULL |
+|  4 | 404 Not Found                             | 2023-03-10 14:04:17 | http://moodletech.azurewebsites.net/                                | Firefox Developer Edition |   NULL |
+|  5 | Working...                                | 2023-03-10 14:04:17 | https://login.microsoftonline.com/kmsi                              | Firefox Developer Edition |   NULL |
+|  6 | Email - Usuario Aluno - Outlook           | 2023-03-10 14:04:17 | https://outlook.office.com/mail/                                    | Firefox Developer Edition |   NULL |
+|  7 | Solicitações - Suporte - Digital Building | 2023-03-10 14:04:17 | https://bandtec.sdpondemand.manageengine.com/app/itdesk/ui/requests | Firefox Developer Edition |   NULL |
+|  8 | Carrinho de compras da Amazon.com         | 2023-03-10 14:04:17 | https://www.amazon.com.br/gp/cart/view.html?ref_=nav_cart           | Firefox Developer Edition |   NULL |
+|  9 | MySQL | Begin Your Download               | 2023-03-10 14:04:17 | https://dev.mysql.com/downloads/file/?id=516926                     | Firefox Developer Edition |   NULL |
+| 10 | MySQL | Download MySQL Installer          | 2023-03-10 14:04:17 | https://dev.mysql.com/downloads/installer/                          | Firefox Developer Edition |   NULL |
++----+-------------------------------------------+---------------------+---------------------------------------------------------------------+---------------------------+--------+
+10 rows in set (0.00 sec)
+
+mysql> select id, fkuser from historico;
++----+--------+
+| id | fkuser |
++----+--------+
+|  1 |   NULL |
+|  2 |   NULL |
+|  3 |   NULL |
+|  4 |   NULL |
+|  5 |   NULL |
+|  6 |   NULL |
+|  7 |   NULL |
+|  8 |   NULL |
+|  9 |   NULL |
+| 10 |   NULL |
++----+--------+
+10 rows in set (0.00 sec)
+
+
+mysql> update historico set fkuser = 100 where id in (1,2,3,4,5,6,7,8,9,10);
+Query OK, 10 rows affected (0.01 sec)
+Rows matched: 10  Changed: 10  Warnings: 0
+
+mysql> select*from historico;
++----+-------------------------------------------+---------------------+---------------------------------------------------------------------+---------------------------+--------+
+| id | nome                                      | dataHora            | url                                                                 | navegador                 | fkuser |
++----+-------------------------------------------+---------------------+---------------------------------------------------------------------+---------------------------+--------+
+|  1 | São Paulo Tech School                     | 2023-03-10 14:04:17 | https://moodle.sptech.school/                                       | Microsoft Edge            |    100 |
+|  2 | Página Inicial - Microsoft Azure          | 2023-03-10 14:04:17 | https://portal.azure.com/#home                                      | Microsoft Edge            |    100 |
+|  3 | Ofertas e Promoções | Amazon.com.br       | 2023-03-10 14:04:17 | https://www.amazon.com.br/deals?ref_=nav_cs_gb                      | Firefox Developer Edition |    100 |
+|  4 | 404 Not Found                             | 2023-03-10 14:04:17 | http://moodletech.azurewebsites.net/                                | Firefox Developer Edition |    100 |
+|  5 | Working...                                | 2023-03-10 14:04:17 | https://login.microsoftonline.com/kmsi                              | Firefox Developer Edition |    100 |
+|  6 | Email - Usuario Aluno - Outlook           | 2023-03-10 14:04:17 | https://outlook.office.com/mail/                                    | Firefox Developer Edition |    100 |
+|  7 | Solicitações - Suporte - Digital Building | 2023-03-10 14:04:17 | https://bandtec.sdpondemand.manageengine.com/app/itdesk/ui/requests | Firefox Developer Edition |    100 |
+|  8 | Carrinho de compras da Amazon.com         | 2023-03-10 14:04:17 | https://www.amazon.com.br/gp/cart/view.html?ref_=nav_cart           | Firefox Developer Edition |    100 |
+|  9 | MySQL | Begin Your Download               | 2023-03-10 14:04:17 | https://dev.mysql.com/downloads/file/?id=516926                     | Firefox Developer Edition |    100 |
+| 10 | MySQL | Download MySQL Installer          | 2023-03-10 14:04:17 | https://dev.mysql.com/downloads/installer/                          | Firefox Developer Edition |    100 |
++----+-------------------------------------------+---------------------+---------------------------------------------------------------------+---------------------------+--------+
+10 rows in set (0.00 sec)
+
+mysql> desc historico;
++-----------+--------------+------+-----+-------------------+-------------------+
+| Field     | Type         | Null | Key | Default           | Extra             |
++-----------+--------------+------+-----+-------------------+-------------------+
+| id        | int          | NO   | PRI | NULL              | auto_increment    |
+| nome      | varchar(200) | NO   |     | NULL              |                   |
+| dataHora  | datetime     | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
+| url       | varchar(250) | NO   |     | NULL              |                   |
+| navegador | varchar(100) | YES  |     | NULL              |                   |
+| fkuser    | int          | YES  | MUL | NULL              |                   |
++-----------+--------------+------+-----+-------------------+-------------------+
+6 rows in set (0.00 sec)
+
+mysql> select id, fkuser from historico;
++----+--------+
+| id | fkuser |
++----+--------+
+|  1 |    100 |
+|  2 |    100 |
+|  3 |    100 |
+|  4 |    100 |
+|  5 |    100 |
+|  6 |    100 |
+|  7 |    100 |
+|  8 |    100 |
+|  9 |    100 |
+| 10 |    100 |
++----+--------+
+10 rows in set (0.00 sec)
+
+mysql> select * from usuario;
++-----+--------+----------------+
+| id  | nome   | cpf            |
++-----+--------+----------------+
+| 100 | Isabel | 123.456.789-10 |
+| 101 | Felipe | 987.654.321-00 |
++-----+--------+----------------+
+2 rows in set (0.00 sec)
+
+
+mysql> select usuario.nome, historico.navegador from usuario join historico on usuario.id = historico.fkuser;
++--------+---------------------------+
+| nome   | navegador                 |
++--------+---------------------------+
+| Isabel | Microsoft Edge            |
+| Isabel | Microsoft Edge            |
+| Isabel | Firefox Developer Edition |
+| Isabel | Firefox Developer Edition |
+| Isabel | Firefox Developer Edition |
+| Isabel | Firefox Developer Edition |
+| Isabel | Firefox Developer Edition |
+| Isabel | Firefox Developer Edition |
+| Isabel | Firefox Developer Edition |
+| Isabel | Firefox Developer Edition |
++--------+---------------------------+
+10 rows in set (0.00 sec)

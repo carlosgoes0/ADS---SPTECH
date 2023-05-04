@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Inserir meta economia <input id="input_meta"><br>
+    Inserir valor economizado <input id="input_economia"><br>
+    <button onclick="Calcular()">Analisar economia</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function Calcular() {
+        var meta = Number(input_meta.value)
+        var economia = Number(input_economia.value)
+        var calc = Number(meta - economia)
+        
+
+        if (economia < meta) {
+            div_mensagem.innerHTML = `Ainda em busca da meta! Falta ${calc} para atingir a meta<br>`
+        } else if (economia == meta){
+            div_mensagem.innerHTML = `Parabéns, meta alcançada!<br>`
+        } else {
+            div_mensagem.innerHTML += `Meta ultrapassada em ${economia - meta}!<br>`
+        }
+    }
+</script>

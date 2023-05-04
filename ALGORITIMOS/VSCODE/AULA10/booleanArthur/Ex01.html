@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex01</title>
+</head>
+<body>
+    Login: <input id="input_login"><br>
+    Senha: <input id="input_senha"><br>
+
+    <button onclick="analisar()">Entrar</button>
+    <div id="div_frase"></div>
+</body>
+</html>
+
+<script>
+    function analisar(){
+        var login = input_login.value
+        var senha = input_senha.value
+
+        var validacao_login = "aidimin"
+        var validacao_senha = "seinha"
+
+        var validacao_L = login == validacao_login
+        var validacao_S = senha == validacao_senha
+        var validacao_final = validacao_L && validacao_S
+
+    
+        if(validacao_final){
+            div_frase.innerHTML = `<span style="color:blue;">Usuário autenticado com sucesso`
+        } if(validacao_L != true){
+            div_frase.innerHTML += `<span style="color:red;">Login Incorreto!<br>`
+        } if (validacao_S != true){
+            div_frase.innerHTML += `<br><span style="color:red;">Senha incorreta!`
+                alert("Entre em contato com o suporte para recuperar sua senha")
+        }
+        
+
+    }
+</script>

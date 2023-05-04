@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o valor da renda familiar <input id="input_rendaf"><br><br>
+    Insira o valor prestação <input id="input_prest"><br><br>
+    <button onclick="Calcular()">Verificar Financiamento</button>
+    <div id="div_frases"></div>
+
+</body>
+</html>
+<script>
+    function Calcular() {
+        var rendaf = (input_rendaf.value)
+        var prest = (input_prest.value)
+        var porcentagem = ((prest/rendaf)*100)
+
+
+        if (porcentagem <= 30)
+        div_frases.innerHTML = `<b style="color:Blue">A prestação corresponde a ${porcentagem}% da renda familiar`
+
+        if (porcentagem > 30) {
+        div_frases.innerHTML = `<b style="color:Red">Será necessário complementar a renda familiar</b>`
+        }
+    }
+</script>

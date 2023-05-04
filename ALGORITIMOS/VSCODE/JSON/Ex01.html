@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a quantidade de Vitorias: <input id="input_Vitorias"><br>
+    Insira a quantidade de Empates: <input id="input_Empates"><br>
+    Insira a quantidade de Derrotas: <input id="input_Derrotas"><br>
+     <button onclick="AnalisarCampanha()">Analisar Campanha</button>
+     <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    
+
+    function AnalisarCampanha() {
+        var Vitorias = Number(input_Vitorias.value)
+        var Empates = Number(input_Empates.value)
+        var Derrotas = Number(input_Derrotas.value)
+
+        var Time = {
+            Vitorias: 3,
+            Empates: 1,
+            Derrotas: 0,
+        }
+        div_resultado.innerHTML = `O time terminou o campeonato com ${Time.Vitorias*Vitorias + Time.Empates*Empates + Time.Derrotas*Derrotas} pontos`
+
+
+        }
+
+</script>

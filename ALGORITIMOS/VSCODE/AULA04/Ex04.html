@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o valor da pizza: <input id="input_pizza"><br>
+    Insira a qtd de amigos: <input id="input_amigos"><br>    
+    <button onclick="pizza()">Rola a Pizza ?<br>
+    </button>
+    <div id="divfrases"></div>
+</body>
+</html>
+<script>
+
+function pizza() {
+    var valor = (input_pizza.value) 
+    var amigos = (input_amigos.value)
+    var media = (valor/amigos)
+
+    if (media <=20) {
+    divfrases.innerHTML = `Cada amigo vai pagar ${media} pela pizza`}
+
+    if (media >20) {
+        divfrases.innerHTML = `Cada amigo vai pagar ${media} pela pizza, Deu ruim! Pizza muito cara!`}
+}
+</script>

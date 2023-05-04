@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Olá, Preencha os dados!</h1><br><br>
+    Insira o valor da passagem <input id="input_vlr"><br><br>
+    Insira a qtd de passagens/mes <input id="input_qtd"><br><br>
+    Insira a qtd de km trabalho/casa <input id="input_km"><br><br>
+    <button onclick="Calcular()">Calcular VT</button><br><br>
+    <div id = "div_frases"></div>
+</body>
+</html>
+<script>
+    function Calcular() {
+        var totdias = Number(input_qtd.value);
+        var tot = Number(input_vlr.value * input_qtd.value);
+        var km = Number(input_km.value * 0.75);
+        var totd = Number((totdias *10/100));
+        
+        var uber = Number(km * totdias);
+        div_frases.innerHTML =  `Você vai gastar R$ ${tot} por mês com transporte.
+        <br>Se você usar o Uber ${totd} dias, você vai gastar R$ ${uber} por mês.`
+    }
+</script>

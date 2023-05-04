@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex05</title>
+</head>
+<body>
+    Qual seu peso: <input id="input_peso"> <br>
+    Qual sua altura (Em metros): <input type="number" id="input_altura"><br>
+    <button onclick="analisar()">Verificar IMC</button>
+    <div id="div_frase"></div>
+</body>
+</html>
+
+<script>
+    function analisar(){
+        var text = input_altura.value == "" || input_peso.value == ""
+        
+        var peso = Number(input_peso.value)
+        var altura = Number(input_altura.value)
+
+        var alturaEmMetros = altura;
+        if (altura > 3) {
+            alturaEmMetros = altura / 100;
+        }
+
+        var imc = peso / (alturaEmMetros*alturaEmMetros)
+        
+        if(text){
+            alert("Digite as informações corretas")
+        } 
+
+        if (imc < 18.5){
+            div_frase.innerHTML = `<span style= "color: blue;"> Abaixo do peso ${imc.toFixed(2)} </span>`
+        }
+
+        
+        else if (imc >= 18.5  && imc < 24.9){ 
+            div_frase.innerHTML = `<span style= "color: green;"> Peso ideal ${imc.toFixed(2)} </span>`
+        }
+
+        
+        else if (imc >= 24.9  && imc < 30){ 
+            div_frase.innerHTML = `<span style= "color: yellow;"> Excesso de peso ${imc.toFixed(2)}</span>`
+        }
+
+
+        else if (imc >= 30  && imc < 35){ 
+            div_frase.innerHTML = `<span style= "color: orange;"> Obesidade ${imc.toFixed(2)}</span>`
+        }
+
+        
+        else if (imc >= 35 ){ 
+            div_frase.innerHTML = `<span style= "color: red;"> Obesidade extrema ${imc.toFixed(2)}</span>`
+        }
+
+    }
+</script>

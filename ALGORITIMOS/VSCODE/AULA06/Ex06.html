@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o time que torce de SP: <input type="text" id="input_time">
+    <button onclick="Calcular()">Fale sobre seu time</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function Calcular(){
+        var time = (input_time.value)
+        
+        if (time == "Corinthians") {
+            div_mensagem.innerHTML = ` <div style="background-color: black; color: white">Salve o Corinthians</style>`
+        } else if (time == "Palmeiras") {
+                div_mensagem.innerHTML = `<div style="background-color: green; color: white">Salve o alviverde imponente</style>`
+            } else if (time == "Santos") {
+                div_mensagem.innerHTML = `<div style="background-color: white; color: black">Agora que dá a bola é o Santos</style>`
+            } else if (time == "São Paulo") {
+                div_mensagem.innerHTML = `<div style="background-color: black; color: red">Salve o Tricolor paulista</style>`
+            } else {
+                div_mensagem.innerHTML = `Não conheço esse time</style>`
+        }
+
+    }
+</script>

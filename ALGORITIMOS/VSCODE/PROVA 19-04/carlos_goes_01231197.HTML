@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=i, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a quantidade de pontos: <input type="number"  id="input_pontos" min="20" max="5000"><br>
+    Insira a quantidade de clones: <input type="number" id="input_clones" min="0" max="250"><br>
+    Insira a quantidade de clones L: <input type="number"  id="input_clonesL" min="0"><br>
+    <button onclick="criarclones()">Criar Clones</button><br>
+    <div id="div_mensagem"></div><br><br>
+    <div id="div_Resultado"></div>
+</body>
+</html>
+<script>
+ function criarclones() {
+      var pontos = Number(input_pontos.value)
+      var clones = Number(input_clones.value)
+      var clonesL = Number(input_clonesL.value)
+      var sobra = pontos - (clones * 20)
+      var porcentagem = (sobra - pontos) * 100
+      
+
+      
+
+
+
+      if (pontos >= 20 && pontos <= 5000 && clones > 0 && clones <= 250 &&  clonesL > 0)  {
+           
+        if (pontos >= (clones * 20)){
+
+                    
+                for (var cloneN = 1;
+                         cloneN <= clonesL;
+                         cloneN++) {
+
+            div_mensagem.innerHTML += `<img src="https://static1.purebreak.com.br/articles/2/14/48/2/@/74079-seria-naruto-o-ninja-mais-poderoso-de-opengraph_1200-1.jpg" width="100px" height="100px">`
+        }
+
+            div_Resultado.innerHTML =
+
+            `
+            ANÁLISE DA GERAÇÃO DE CLONES<br>
+            Energia Inicial: ${pontos}<br>  
+            Qtde de Clones: ${clones}<br>
+            Sobra de Energia: ${pontos - (clones * 20)}<br>`
+
+
+            if(sobra > 1000 || clones > 50 || porcentagem > 20 ) {
+                div_mensagem.innerHTML += `<br>“PROVAVELMENTE VOCE VAI GANHAR”<br>`
+            }else if (sobra > 500 || clones > 20 && clones <= 50 || porcentagem > 10) {
+                div_mensagem.innerHTML += `<br>“A LUTA VAI SER MUITO BOA”<br>`
+            } else {
+                div_mensagem.innerHTML += `<br>“TORÇA PARA O ADVERSÁRIO SER FRAQUINHO"<br>`
+            }
+
+
+        }
+
+            else {
+                alert(`Sem energia para criar os clones.`) 
+            }    
+    }
+    else {
+        alert (`ERRO NA ENTRADA DE DADOS – Energia tem que ser entre 20 e 5.000. Quantidade de Clones tem que ser entre 0 e 250. Quantidade de Clones por linha tem que ser maior que 0.`) 
+    }
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+</script>

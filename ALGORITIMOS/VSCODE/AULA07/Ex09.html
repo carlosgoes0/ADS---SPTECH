@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Inserir alt incial: <input id="input_alti"><br>
+    Inserir alt final: <input id="input_altf"><br>
+    Insira seu nome: <input id="input_nome"><br>
+    Insira a sua alt do candidato: <input id="input_alt"><br>
+    <button onclick="Calcular()">Calcular</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function Calcular(){
+        var alti = Number(input_alti.value)
+        var altf = Number(input_altf.value)
+        var nome = (input_nome.value)
+        var alt = Number(input_alt.value)
+
+      if (alt > alti && alt <= altf){
+        div_mensagem.innerHTML = `O candidato ${nome} com altura de ${alt} participará do processo de seleção de piloto`
+      } else {
+        div_mensagem.innerHTML = `Infelizmente o candidato ${nome} com altura de ${alt} não atende os requisitos`
+      }
+      }
+    
+</script>

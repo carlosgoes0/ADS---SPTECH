@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o peso: <input id="input_peso"><br>
+    Insira a altura: <input id="input_altura"><br>
+    <button onclick="calcular()">Analisar IMC</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function calcular (){
+        var peso = Number(input_peso.value);
+        var altura = Number(input_altura.value);
+
+        var invalido = peso == "" || altura == "";
+
+        var altmetros = altura;
+
+        if (altura > 3){
+            altmetros = altura / 100; }
+
+        var imc = peso / (altmetros * altmetros);
+        
+        if (invalido) {
+            alert("Insira os dados corretamente");  
+        } else if (imc < 18.5){
+            div_mensagem.innerHTML = `<span style="color: blue;">Abaixo do Peso</span>`;
+        } else if (imc <= 24.9){ 
+            div_mensagem.innerHTML = `<span style="color: green;">Peso Ideal</span>`;
+        } else if (imc <= 29.9){
+            div_mensagem.innerHTML = `<span style="color: yellow;">Excesso de Peso</span>`;
+        } else if (imc <= 35){
+            div_mensagem.innerHTML = `<span style="color: orange;">Obesidade</span>`;
+        } else {
+            div_mensagem.innerHTML = `<span style="color: red;">Obesidade Extrema</span>`;
+        }
+    
+    }
+</script>

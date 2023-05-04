@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula02 - Operações Aritméticas</title>
+</head>
+<body>
+    <h1>Olá, preencha os campos!</h1><br><br>
+
+    Insira um N1: <input id='input_n1'> <br><br>
+    Insira um N2: <input id='input_n2'> <br><br>
+    <button onclick="Somar()">Somar </button><br><br>
+    <button onclick="Diferença()">Diferença </button><br><br>
+    <button onclick="Produto()">Produto </button><br><br>
+    <button onclick="Razão()">Razão</button><br><br>
+
+</body>
+</html>
+
+<script>
+    function Somar(){
+        var numero1 = Number (input_n1.value)
+        var numero2 = Number (input_n2.value)
+        alert( "A soma entre " + numero1 + " e " + numero2 + " é " + (numero1 + numero2))}
+        function Diferença(){
+            var numero1 = Number (input_n1.value)
+            var numero2 = Number (input_n2.value)
+        alert( "A diferença entre " + numero1 + " e " + numero2 + " é " + (numero1 - numero2))}
+        function Produto(){
+            var numero1 = Number (input_n1.value)
+            var numero2 = Number (input_n2.value)
+        alert( "O produto de " + numero1 + " e " + numero2 + " é " + (numero1 * numero2))}
+        function Razão(){
+            var numero1 = Number (input_n1.value)
+            var numero2 = Number (input_n2.value)
+        alert( "A razão entre " + numero1 + " e " + numero2 + " é " + (numero1/numero2))}
+</script>
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Olá, Preencha os dados!</h1><br><br>
+    Inserir qtd H: <input id="input_h"><br>   
+    Inserir qtd M: <input id="input_m"><br>
+    <button onclick="Calcular()">Ligar elevador</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function Calcular(){
+    var h = Number(input_h.value * 90)
+    var m = Number(input_m.value * 70)
+    var peso = (h + m)
+
+       
+    if (peso >=500){
+        div_mensagem.innerHTML = `Alguém precisa descer. Precisa perder ${peso - 500}kg para mover o elevador `
+    } else {
+        div_mensagem.innerHTML = `Elevador vai se mover, pois está com ${peso}`
+    }
+    }
+</script>

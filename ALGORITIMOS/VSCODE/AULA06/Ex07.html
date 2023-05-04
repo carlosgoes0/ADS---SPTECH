@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o valor economizado <input id="input_economia">
+    <button onclick="Calcular()">Poder de Compra</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function Calcular(){
+        var economia = Number(input_economia.value)
+
+        if (economia <= 0){
+            div_mensagem.innerHTML = `Nada de compras triste<br>`
+        } else if (economia <= 100){
+            div_mensagem.innerHTML = `Viajem de ida e volta pra Praia Grande<br>`
+        } else if (economia <= 4000){
+            div_mensagem.innerHTML += `Uma boa moto usada<br>`
+        } else {
+            div_mensagem.innerHTML += `Mais alguma bobagem legal<br>`
+        }
+    }
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Olá, preencha os campos!</h1><br><br>
+
+    Insira o nome: <input id="input_nome"><br><br>
+    Insira a nota continuada: <input id="input_conti"><br><br>
+    Insira a nota semestral: <input id="input_semest"><br><br>
+    
+    <button onclick="Media()">
+        Calcule a média </button><br><br>
+</body>
+</html>
+
+<script> function Media(){
+    alert("A média de " + input_nome.value + " será de " + ((((40 * input_conti.value)/100)) + ((60 * input_semest.value)/100)))
+}
+
+
+</script>

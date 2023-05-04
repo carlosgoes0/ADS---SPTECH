@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe a ultima série que assistiu: <input id="input_serie"><br><br>
+    Informe o total de ep ja assistidos: <input id="input_ep"><br><br>
+    <button onclick="Calcular()">Verificar Nivel</button>
+    <div id="div_frases"></div>
+</body>
+</html>
+<script>
+    function Calcular() {
+        var serie = (input_serie.value)
+        var ep = Number(input_ep.value)
+        var temp = Number(ep * 22)
+
+        div_frases.innerHTML = `Vejo que você gosta da série ${serie}`
+
+        if (temp > 1800)
+        div_frases.innerHTML += `Uau, você realmente gosta dessa série!`
+    }
+</script>

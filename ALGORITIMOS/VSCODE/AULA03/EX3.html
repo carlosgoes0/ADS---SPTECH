@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Olá, Preencha os dados!</h1><br><br>
+    Qual tabuada gostaria de ver ? <input id="input_tab"><br><br>
+    <button onclick="tabuada()">Calcular Tabuada</button><br><br>
+    <div id = "div_frases"></div>
+
+</body>
+</html>
+<script>
+    function tabuada() {
+        var tab = Number(input_tab.value);
+        div_frases.innerHTML =
+           `${tab} x 1 = ${Number(tab * 1)}<br>
+            ${tab} x 2 = ${Number(tab * 2)}<br>
+            ${tab} x 3 = ${Number(tab * 3)}<br>
+            ${tab} x 4 = ${Number(tab * 4)}<br>
+            ${tab} x 5 = ${Number(tab * 5)}<br>
+            ${tab} x 6 = ${Number(tab * 6)}<br>
+            ${tab} x 7 = ${Number(tab * 7)}<br>
+            ${tab} x 8 = ${Number(tab * 8)}<br>
+            ${tab} x 9 = ${Number(tab * 9)}`
+           
+        }
+
+</script>

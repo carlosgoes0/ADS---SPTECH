@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o qtd de M que entraram no elevador <input id="input_m"><br><br>
+    Insira o qtd de F que entraram no elevador <input id="input_f"><br><br>
+    <button onclick="Calcular()">Analisar Peso</button>
+    <div id="div_frases"></div>
+</body>
+</html>
+
+<script>
+    function Calcular() {
+        var m = Number(input_m.value * 80)
+        var f = Number(input_f.value * 60)
+        var tot = (m + f)   
+div_frases.innerHTML = `Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${tot}kg`  
+        
+        if (tot > 800) {
+            div_frases.innerHTML = `Será necessário descer alguém para que o elevador se movimente!`
+            document.getElementById("div_frases").style.color = "blue";}
+    }
+</script>

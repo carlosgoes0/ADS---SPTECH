@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Olá, Preencha os dados!</h1><br><br>
+    Qtd votos candidato A <input id="input_vtA"><br>
+    Qtd votos candidato B <input id="input_vtB"><br>
+    Qtd votos nulos <input id="input_vtN"><br>
+    Qtd votos brancos <input id="input_vtBR"><br>
+<button onclick="eleicao()">Resultado da Eleição</button><br><br>
+<div id="div_frases"></div><br><br>
+
+</body>
+</html>
+
+<script> function eleicao() {
+    var vtA = Number(input_vtA.value);
+    var vtB = Number(input_vtB.value);
+    var vtN = Number(input_vtN.value);
+    var vtBR = Number(input_vtBR.value);
+    var total = Number(vtA + vtB + vtN + vtBR);
+    var invalidos = Number(vtN + vtBR);
+    var resA = Number((vtA * 100)/total);
+    var resB = Number((vtB * 100)/total);
+    var resInv = Number((invalidos * 100)/total);
+
+    div_frases.innerHTML = `O candidato A teve ${resA}% votos! <br>
+    O candidato B teve ${resB}% votos! <br>
+    O total de votos inválidos foi ${resInv}% <br>
+    O total de votos foi ${total}`
+    
+}
+
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a quantidade de Coca Cola: <input id="input_qtdCoca">
+    <button onclick="exibir()">Ver Quantidade</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+
+function exibir () {
+    
+    var qtdCoca = Number(input_qtdCoca.value);
+
+    for (var contador = 1;
+         contador <= qtdCoca;
+         contador += 1) {
+          
+         div_mensagem.innerHTML += `<img src="https://www.piramidesdistribuidora.com.br/images/products/3716-coca-cola-lata-350ml-12un.20221127105239.png" alt="" height="5%" width="5%">`;
+            
+         }
+}
+
+</script>

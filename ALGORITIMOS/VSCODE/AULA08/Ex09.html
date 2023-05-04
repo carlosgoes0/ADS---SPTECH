@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a marca da tv: <input id="input_tv"><br>
+    Insira o valor da tv: <input id="input_valor"><br>
+    <button onclick="Analisar()">Analisar compra</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function Analisar() {
+        var tv = (input_tv.value)
+        var valor = Number(input_valor.value)
+
+        if(valor < 800 || valor > 2000){
+            div_mensagem.innerHTML = `TV fora da faixa de preço<br>`
+        } else if (valor < 800) {
+            div_mensagem.innerHTML += `Preço baixo demais!<br>`
+        } else if (valor > 2000){
+            div_mensagem.innerHTML += `TV cara demais, infelizmente!<br>`
+        }
+        
+        
+        
+    }
+</script>

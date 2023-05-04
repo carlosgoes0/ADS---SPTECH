@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a qtd de depositos: <input id="input_qtdDepositos"><br>
+    Insira o valor do depositos: <input id="input_valorDepositos"><br>
+    <button onclick="calcular()">Acompanhar grana</button><br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var qtdDepositos = Number(input_qtdDepositos.value);
+        var valorDepositos = Number(input_valorDepositos.value);
+        var total = 0;
+
+        for (var mes = 1; 
+                 mes <= qtdDepositos; 
+                 mes ++) {
+            total += valorDepositos;
+
+
+          if (mes % 3 == 0) {
+             total += total / 100;
+          }
+          div_mensagem.innerHTML += `${mes}. mes R$ ${total} <br>`    
+
+    }
+    div_mensagem.innerHTML += `Total Guardado ${total} <br>` 
+
+    }
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex03</title>
+</head>
+<body>
+    Digite sua primeira nota: <input id="input_nota1"><br>
+    Digite sua segunda nota: <input id="input_nota2"><br>
+    Digite sua frequência: <input id="input_freq"><br>
+    <button onclick="analisar()">Avaliar</button><br>
+    <div id="div_frase"></div>
+</body>
+</html>
+
+<script>
+    function analisar(){
+        var nota1 = Number(input_nota1.value)
+        var nota2 = Number(input_nota2.value)
+        var frequencia = Number(input_freq.value)
+        var media = (nota1 + nota2) / 2; 
+
+    
+        var validacao_media = media >= 6; 
+        var validacao_frequencia = frequencia >= 75; 
+        var validacao_aprovacao = validacao_frequencia && validacao_media;
+        
+        if(validacao_aprovacao){
+            div_frase.innerHTML = "Parabéns, Aprovado!"
+        } if(validacao_media != true){
+            div_frase.innerHTML += "Reprovado por nota!<br>"
+        }
+        if(validacao_frequencia != true){
+            div_frase.innerHTML += "Reprovado por frequência!"
+        }
+
+    }
+
+</script>

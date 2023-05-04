@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="Depositar100()">Depositar 100</button>
+    <button onclick="Sacar20()">Sacar 20</button>
+    <div id="div_mensagem"></div>
+
+
+</body>
+</html>
+   
+<script>
+
+
+var inf = {
+    saldo: 0,
+    deposito: 0,
+    saque: 0,
+};
+
+
+
+function Depositar100() {
+    inf.saldo += 100;
+    inf.deposito +=1;
+    mensagem ();
+  
+};
+
+function Sacar20 () {
+    inf.saldo -= 20;
+    inf.saque +=1;
+    mensagem ();
+
+};
+
+function mensagem () {
+    div_mensagem.innerHTML = `Saldo R$${inf.saldo}<br>
+                          Depositos ${inf.deposito}<br> 
+                          Saques ${inf.saque}`
+}
+</script> 

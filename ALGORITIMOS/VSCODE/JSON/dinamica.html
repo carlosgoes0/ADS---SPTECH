@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fileiras de Lampadas em uma Sala</title>
+</head>
+<body>
+    <button  onclick="fileira1.interruptorFileira()">Interruptor Fileira 1</button>
+
+    <button  onclick="fileira2.interruptorFileira()">Interruptor Fileira 2</button>
+</body>
+</html>
+
+
+
+<script>
+    var sala = {
+    Nome: "Sala 1",
+    Andar: 6,
+    Capacidade: 70,
+    QuantidadeLampada: 20,
+    fileiras: {
+        fileira1,
+        fileira2,
+    },
+
+    interruptor: function (fileira) {
+        fileira.Power = !(fileira.Power)
+        if (fileira.Power == true) {
+            fileira.status = "Ligado"
+        } else {
+            fileira.status = "Desligado"
+        }
+        alert(`Status da Fileira ${fileira.NumeroFileira} de Lämpadas: ${fileira.status}`)
+     }
+}
+
+var fileira1 = {
+    NumeroFileira: 1,
+    QuantidadeLampada: 10,
+    Marca: "Philips",
+    Modelo: "A60",
+    Potencia: 10,
+    Tensao: 220,
+    Corrente: 0.05,
+    Lumens: 806, 
+    Power: false, 
+    status: "Desligado",
+
+    interruptorFileira: function () {
+        sala.interruptor(this);
+    }
+}
+
+var fileira2 = {
+    NumeroFileira: 2,
+    QuantidadeLampada: 10,
+    Marca: "Philips",
+    Modelo: "A60",
+    Potencia: 10,
+    Tensao: 220,
+    Corrente: 0.05,
+    Lumens: 806, 
+    Power: false, 
+    status: "Desligado",
+
+    interruptorFileira: function () {
+        sala.interruptor(this);
+    }
+}
+
+
+
+</script>

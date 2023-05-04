@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a qtd de passagens: <input id="input_passagens"><br>
+    <button onclick="Calcular()">Comprar</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function Calcular(){
+        var qtd = Number(input_passagens.value)
+        var total = Number(qtd * 4.40)
+        
+        if (qtd > 8 && qtd <= 19){
+            var desc1 = Number(total * 0.3)/10
+            div_mensagem.innerHTML = `Total a pagar ${total - desc1}`}
+            else if (qtd >= 20 && qtd <= 49){
+                var desc2 = Number(total * 0.5)/10
+                div_mensagem.innerHTML = `Total a pagar ${total - desc2}`}
+                else if (qtd == 50){
+                    var desc3 = Number(total * 0.7)/10
+                    div_mensagem.innerHTML = `Total a pagar ${total - desc3}`}
+                    else {
+                        alert ("Quantidade inválida para o Fidelidade!")}
+
+            }
+    
+</script>

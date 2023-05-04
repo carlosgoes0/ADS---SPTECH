@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Olá, Preencha os dados!</h1><br><br>
+    Insira o seu ki base <input id="input_ki"><br><br>
+    <button onclick="Calcular1()">SSJ</button><br><br>
+    <button onclick="Calcular2()">SSJ2</button><br><br>
+    <button onclick="Calcular3()">SSJ3</button><br><br>
+    <div id = "div_frases"></div>
+</body>
+</html>
+<script>
+    function Calcular1() {
+        var ssj = Number(input_ki.value * 50);
+        var ssj2 = Number(input_ki.value * 100);  
+        div_frases.innerHTML = `O seu ki é de ${ssj}<br>
+        Após se transformar em SSJ2, o ki desse Sayajin passa a ser de ${ssj2}`
+    }   
+    function Calcular2() {
+        var ssj2 = Number(input_ki.value * 100);   
+        var ssj3 = Number(input_ki.value * 200)
+        div_frases.innerHTML = `O seu ki é de ${ssj2} <br>
+        Após se transformar em SSJ3, o ki desse Sayajin passa a ser de ${ssj3}`
+    }
+    function Calcular3() {
+        var ssj3 = Number(input_ki.value * 200);
+        div_frases.innerHTML = `O seu ki é de ${ssj3}`
+    }
+</script>

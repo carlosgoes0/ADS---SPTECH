@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a sua altura: <input id="input_altura"><br>
+    <button onclick="analisar()">Analisar para esportes</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function analisar() {
+        var altura = Number(input_altura.value)
+        
+        var alt1 = altura <= 1.60
+        var alt2 = altura <= 1.85
+    
+        if (alt1){
+            div_mensagem.innerHTML = `Pode tentar ser piloto(a) de corrida<br>`
+            div_mensagem.innerHTML += `Pode tentar ser velejador(a)`
+        }
+        else if (alt2){
+            div_mensagem.innerHTML = `Pode tentar ser jogador de futebol ou handbol`
+        }
+    }
+</script>
